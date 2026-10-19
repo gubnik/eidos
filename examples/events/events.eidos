@@ -1,0 +1,20 @@
+define u8string: message = {
+    size: u32le,
+    data: [size] byte,
+}
+
+define write_file_event: message = {
+    permissions: u32le,
+    file_path: u8string,
+    delta: u8string,
+}
+
+define socket_close_event: message = {
+    socket_path: u8string,
+}
+
+define event: variant by u8 = {
+    0x00 -> socket_close_event,
+    0x01 -> write_file_event,
+    else -> !error,
+}

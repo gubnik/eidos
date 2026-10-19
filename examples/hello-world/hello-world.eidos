@@ -1,0 +1,8 @@
+define ping: message {
+    magic: u64le,
+}
+
+define hello: message {
+    size: u32le,
+    data: [size] byte,
+}
