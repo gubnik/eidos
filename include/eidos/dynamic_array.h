@@ -27,7 +27,7 @@
                 (array).data =                                                                     \
                     (alloc)->realloc((array).data, (array).capacity * sizeof(*(array).data));      \
             }                                                                                      \
-            (array).data[(array).size++] = value;                                                  \
+            (array).data[(array).size++] = (value);                                                \
         }                                                                                          \
     } while (0)
 
